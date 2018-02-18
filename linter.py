@@ -16,5 +16,3 @@ class __class__(__superclass__):
     selectors = {}
     word_re = None
     defaults = {}
-    inline_settings = None
-    inline_overrides = None
