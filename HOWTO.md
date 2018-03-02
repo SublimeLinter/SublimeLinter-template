@@ -1,12 +1,12 @@
 Creating a Linter Plugin
 ========================
 
-. Fork this repo to bootstrap your new linter.
-. Clone it into Packages.
-. Change a linter.py.
-. Update the README and replace `__linter__` placeholders.
-. Update messages/install.txt and replace `__linter__` placeholders.
-. Open a PR in our [package_control repo](https://github.com/SublimeLinter/package_control_channel) to make it available to others.
+- Fork this repo to bootstrap your new linter.
+- Clone it into Packages.
+- Change a linter.py.
+- Update the README and replace `__linter__` placeholders.
+- Update messages/install.txt and replace `__linter__` placeholders.
+- Open a PR in our [package_control repo](https://github.com/SublimeLinter/package_control_channel) to make it available to others.
 
 Additional documentation can be found at [sublimelinter.com](http://sublimelinter.com).
 
@@ -17,7 +17,7 @@ Template linter plugins are created with almost all of the Linter class attribut
 
 - Change the default `'selector'` to include the scopes you want the linter to lint.
 
-- Change the `cmd` attribute to include the executable and arguments you want to include on every run. Or if you are going to implement a `cmd <cmd-method>` method, set the attribute to `None` and set the `executable` attribute to the name of the linter executable.
+- Change the `cmd` attribute to include the executable and arguments you want to include on *every* run. Usually this should be a tuple like `('linter', '-fooarg', '-etc', '-')`. You can also make `cmd` a method (or callable in python speak) which returns such a tuple.
 
 - Change the `regex` attribute to correctly capture the error output from the linter.
 
@@ -25,14 +25,8 @@ Template linter plugins are created with almost all of the Linter class attribut
 
 Other, optional, attributes include:
 
-- Determine the minimum/maximum versions of the linter executable that will work with your plugin and change the `version_args`, `version_re` and `version_requirement` attributes accordingly.
-
 - If the linter executable does not accept input via `stdin`, set the `tempfile_suffix` attribute to the filename suffix of the temp files that will be created.
 
 - If the linter outputs errors only on `stderr` or `stdout`, set `error_stream` to `util.STREAM_STDERR` or `util.STREAM_STDOUT` respectively.
-
-- If you wish to support embedded syntaxes, set the `selectors` attribute accordingly.
-
-- If the linter subclasses from `PythonLinter`, remove the `module` attribute if you do not plan to use the linter’s python API. If you do, you will need to implement the `check` method.
 
 You should remove attributes that you do not change, as their values will be provided by the superclass. More information can be found in the [docs](https://github.com/SublimeLinter/SublimeLinter/blob/master/docs/linter_attributes.rst).
