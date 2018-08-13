@@ -1,6 +1,9 @@
-SublimeLinter-contrib-__linter__
+SublimeLinter-contrib-groovyc
 -------------------------------
-This linter plugin for SublimeLinter provides an interface to __linter__.
+This linter plugin for SublimeLinter provides an interface to groovyc.
+
+You have to add groovyc to system PATH, or add it to paths in SublimeLinter settings. GROOVY_HOME
+has to be properly set in environment or SublimeLinter settings.
 
 For more information, please see:
-https://github.com/__user__/SublimeLinter-contrib-__linter__
+https://github.com/alkuzad/SublimeLinter-contrib-groovyc
