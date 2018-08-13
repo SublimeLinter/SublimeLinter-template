@@ -11,6 +11,7 @@ else:
     GROOVY_BINARY = "groovyc"
     CLASSPATH_DIVIDER = ':'
 
+
 class Groovy(Linter):
 
     tempfile_suffix = "-"
@@ -21,7 +22,7 @@ class Groovy(Linter):
                 @\ line\ (?P<line>\d+),\ column\ (?P<col>\d+)\. # line and column, ends with dot
                 ''' \
                 '{}'.format(os.linesep) +\
-                r'''\s*(?P<code>.*?)\n # Second line - will be whole code snippet of error, it has to ends with unix newline
+                r'''\s*(?P<code>.*?)\n # 2line - code snippet of error, it has to end with unix newline
                 ''' \
                 r'|.*) # The last resort match - if we do not match error, match anything to silence info from SL'
 
