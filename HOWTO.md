@@ -1,7 +1,7 @@
 Creating a Linter Plugin
 ========================
 
-- Fork this repo to bootstrap your new linter.
+- Click "use this template" to bootstrap your new linter.
 - Clone it into Packages.
 - Change a linter.py.
 - Update the README and replace `__linter__` placeholders.
